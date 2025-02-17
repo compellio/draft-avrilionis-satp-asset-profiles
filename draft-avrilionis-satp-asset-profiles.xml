@@ -45,8 +45,8 @@
       relationship (in an ontological sense) with a given profile. Asset
       profiles are essential to the SATP protocol as they define the semantics
       of asset instances to be transferred. Gateways may negotiate asset
-      transfers based on the nature and abilities of the assets as defined according 
-      to their profile. The current document discusses the definition of the asset schema 
+      transfers based on the nature and abilities of the assets as defined according
+      to their profile. The current document discusses the definition of the asset schema
       and profile.</t>
     </abstract>
 
@@ -81,15 +81,15 @@
       profiles. It defines a set of namespaces relevant to the definition of
       asset profiles (e.g. Schema.org, W3C SKOS, XML XSD, etc.). It also
       defines the structure of generic constructs that are related to the
-      overall architecture of Asset Profiles and Registries. Two of such 
+      overall architecture of Asset Profiles and Registries. Two of such
       constructs have been identified so far, namely the "Organisation Key" and the "Facets". </t>
 
       <section anchor="organisation_key" title="Organisation key">
-        <t> An organisation key is the definition of the public key of an organisation and 
-        applies to all asset profiles. Such key may be used to sign data in the exchange 
-        between an Asset Provider and a Registry (see <xref target="SATP-ASSET-ARCH"/> for 
-        the related vocabulary). An organisation key is composed of a public key elements and a 
-        date of issuance of the public key. This basic construct may be extended with additional 
+        <t> An organisation key is the definition of the public key of an organisation and
+        applies to all asset profiles. Such key may be used to sign data in the exchange
+        between an Asset Provider and a Registry (see <xref target="SATP-ASSET-ARCH"/> for
+        the related vocabulary). An organisation key is composed of a public key elements and a
+        date of issuance of the public key. This basic construct may be extended with additional
         elements, for example, the end of validity date of the key.</t>
       </section>
 
@@ -147,7 +147,7 @@
         JSON-LD </t>
 
         <figure align="center" anchor="asset_schema_jsonld" title="Asset Schema - JSON-LD">
-          <artwork>       
+          <artwork>
 {
    "@context": {
       "@version": 1.1,
@@ -176,32 +176,32 @@
    "@id": "https://satp.example.org/asset_schema/"
 }
          </artwork>
-       </figure>  
+       </figure>
       </section>
     </section>
 
     <section anchor="asset_profile" title="Asset Profile">
-      <t> Asset Profiles are definitions of the "types" of assets. Asset Profiles may define 
-      a great variety of assets in different industries. Asset Profiles are referenced by Tokenised Asset Records (TARs) 
-      <xref target="SATP-ASSET-ARCH"/> . As TARs are defined JSON, a TAR can reference an Asset Profile using the 
-      @context construct like any ordinary reference to a JSON-LD.  
+      <t> Asset Profiles are definitions of the "types" of assets. Asset Profiles may define
+      a great variety of assets in different industries. Asset Profiles are referenced by Tokenised Asset Records (TARs)
+      <xref target="SATP-ASSET-ARCH"/> . As TARs are defined JSON, a TAR can reference an Asset Profile using the
+      @context construct like any ordinary reference to a JSON-LD.
       </t>
-      
-      <t>For illustration purposes, in this document, we use 
-      the example of an Asset Profile defining a "Digitized Cultural Asset Passport". A Cultural 
-      Asset Passport can be seen as a certificate that is issued by a public authority in a 
-      given jurisdiction, uniquely defining the specific asset. A Digitized Cultural Asset Passport 
+
+      <t>For illustration purposes, in this document, we use
+      the example of an Asset Profile defining a "Digitized Cultural Asset Passport". A Cultural
+      Asset Passport can be seen as a certificate that is issued by a public authority in a
+      given jurisdiction, uniquely defining the specific asset. A Digitized Cultural Asset Passport
       stored in a Registry <xref target="SATP-ASSET-ARCH"/>  allows Gateways to verify the validity
-      of the asset in a given network and therefore to proceed to the transfer of the Digitized Cultural 
-      Asset Passport via the execution of the SATP protocol. In order for such verifications to occur a 
-      public key of the Asset Authority (see  <xref target="SATP-ASSET-ARCH"/> for vocabulary) is also 
-      included in the Asset Profile. In the example below, the Asset Authority 
-      (culture.example.org) defines its public key so any kind of data signature with 
+      of the asset in a given network and therefore to proceed to the transfer of the Digitized Cultural
+      Asset Passport via the execution of the SATP protocol. In order for such verifications to occur a
+      public key of the Asset Authority (see  <xref target="SATP-ASSET-ARCH"/> for vocabulary) is also
+      included in the Asset Profile. In the example below, the Asset Authority
+      (culture.example.org) defines its public key so any kind of data signature with
       such a key (e.g. using a JSON Web Signature - RFC 7515 mechanism) can be independently verified.</t>
-      
-      <t>As it can be seen in the example below and according to the overall Asset Schema and Profile 
-      Architecture defined in <xref target="SATP-ASSET-ARCH"/>, the Digitized Cultural Asset Passport (DCAP) is a 
-      Tokenised Asset Record (TAR), composed of a set of attributes related to the Real-World Asset (RWA) 
+
+      <t>As it can be seen in the example below and according to the overall Asset Schema and Profile
+      Architecture defined in <xref target="SATP-ASSET-ARCH"/>, the Digitized Cultural Asset Passport (DCAP) is a
+      Tokenised Asset Record (TAR), composed of a set of attributes related to the Real-World Asset (RWA)
       as well as another set of attributes related to the Digitized Asset Record (DAR).</t>
 
       <figure align="center" anchor="asset_profile_example" title="Profile example: Digital Product Passport">
@@ -296,8 +296,8 @@
     </section>
 
     <section anchor="tar_example" title="Tokenized Asset Record Example">
-      <t> A Tokenised Asset Record defined according to a given asset profile has to reference the profile as an @context element. 
-      Following the above Asset Profile example the JSON structure below is a non-normative example of a cultural 
+      <t> A Tokenised Asset Record defined according to a given asset profile has to reference the profile as an @context element.
+      Following the above Asset Profile example the JSON structure below is a non-normative example of a cultural
       asset passport TAR.</t>
 
       <figure align="center" anchor="tar_instance" title="TAR Example">
@@ -334,17 +334,17 @@
         </artwork>
       </figure>
     </section>
-    
+
     <section anchor="implementation" title="Implementation considerations">
-       <t>Validating a Tokenised Asset Record against a given Asset Profile shall follow the general JSON-LD 
+       <t>Validating a Tokenised Asset Record against a given Asset Profile shall follow the general JSON-LD
        validation process (see <eref target="https://www.w3.org/TR/json-ld11-api/"/>). However, implementors can
-       add extra validation steps in order to verify the consistency of information stored in a Registry. 
-       In the example above, instead of adding a plain URL reference in the @content element like a regular json-ld, 
-       we show an example of a reference to the asset profile as URN. Fetching the asset profile from a Registry 
-       based on that URN, an asset profile validator can perform the series of checks defined in the section "Working 
+       add extra validation steps in order to verify the consistency of information stored in a Registry.
+       In the example above, instead of adding a plain URL reference in the @content element like a regular json-ld,
+       we show an example of a reference to the asset profile as URN. Fetching the asset profile from a Registry
+       based on that URN, an asset profile validator can perform the series of checks defined in the section "Working
        with Registries" as defined in <xref target="SATP-ASSET-ARCH"/>.</t>
-    </section>    
-    
+    </section>
+
   </middle>
 
   <back>
@@ -360,7 +360,7 @@
 
         <seriesInfo name="Internet-Draft" value="draft-ietf-satp-architecture"/>
       </reference>
-      
+
       <reference anchor="SATP-ASSET-ARCH">
         <front>
           <title>Asset Schema Architecture for Asset Exchange</title>
@@ -372,8 +372,8 @@
         </front>
 
         <seriesInfo name="Internet-Draft" value="draft-avrilionis-satp-asset-schema-architecture"/>
-      </reference>      
-            
+      </reference>
+
     </references>
   </back>
 </rfc>
