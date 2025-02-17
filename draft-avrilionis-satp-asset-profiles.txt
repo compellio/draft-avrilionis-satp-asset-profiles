@@ -153,7 +153,6 @@ Table of Contents
    Below we give an (non-normative) example definition of the Asset
    Schema using JSON-LD
 
-
 {
    "@context": {
       "@version": 1.1,
