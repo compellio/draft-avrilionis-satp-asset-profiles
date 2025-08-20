@@ -5,8 +5,8 @@
 Network Working Group                                      D. Avrilionis
 Internet-Draft                                            Compellio S.A.
 Intended status: Informational                               T. Hardjono
-Expires: 21 August 2025                                              MIT
-                                                        17 February 2025
+Expires: 21 February 2026                                            MIT
+                                                          20 August 2025
 
 
                    Asset Profiles for Asset Exchange
@@ -49,7 +49,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 21 August 2025.
+   This Internet-Draft will expire on 21 February 2026.
 
 Copyright Notice
 
@@ -80,10 +80,10 @@ Table of Contents
 
 1.  Introduction
 
-   Asset transfer protocols such as SATP [1] utilize gateways to
-   transfer tokenized assets from one network to another.  In such
-   transfers, the semantic definition of tokenisable assets is the basis
-   for negotiating the transfer conditions among gateways.
+   Asset transfer protocols such as SATP[1] utilize gateways to transfer
+   tokenized assets from one network to another.  In such transfers, the
+   semantic definition of tokenisable assets is the basis for
+   negotiating the transfer conditions among gateways.
 
    The semantic definition of the tokenizable real-world assets is
    referred to as the asset definition schema (or "asset schema" for
