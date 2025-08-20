@@ -59,7 +59,7 @@
 
   <middle>
     <section anchor="introduction" title="Introduction">
-      <t> Asset transfer protocols such as SATP <xref target="SATP-ARCH"/>
+      <t> Asset transfer protocols such as SATP<xref target="SATP-ARCH"/>
       utilize gateways to transfer tokenized assets from one network to
       another. In such transfers, the semantic definition of tokenisable
       assets is the basis for negotiating the transfer conditions among
